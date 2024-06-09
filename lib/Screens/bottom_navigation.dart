@@ -23,6 +23,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: _navigationItem[_selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
         buttonBackgroundColor: const Color.fromARGB(255, 1, 61, 58),
