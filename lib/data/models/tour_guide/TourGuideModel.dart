@@ -1,10 +1,8 @@
-import 'dart:io';
 
 class TourGuideRequestBody {
   final String name;
   final String phoneNumber;
   final String birthDate;
-  final String selectedPayment;
   final String selectedCity;
   final String image;
   final String email;
@@ -16,7 +14,6 @@ class TourGuideRequestBody {
     required this.name,
     required this.phoneNumber,
     required this.birthDate,
-   required this.selectedPayment,
     required this.selectedCity,
     required this.image,
     required this.email,
@@ -30,7 +27,6 @@ class TourGuideRequestBody {
       name: json['name'],
       phoneNumber: json['phoneNumber'],
       birthDate: json['birthDate'],
-      selectedPayment: json['selectedPayment'],
       selectedCity: json['selectedCity'],
       image: json['image'],
       email: json['email'],
@@ -45,7 +41,6 @@ class TourGuideRequestBody {
       'name': name,
       'phoneNumber': phoneNumber,
       'birthDate': birthDate,
-      'selectedPayment': selectedPayment,
       'selectedCity': selectedCity,
       'image': image,
       'email': email,

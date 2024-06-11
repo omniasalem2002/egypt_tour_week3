@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:guru/core/utils/colors_app.dart';
 import 'package:guru/core/utils/styles.dart';
-import 'package:guru/logic/tour_guide/add_tour_guide/add_tour_guide_cubit.dart';
+import 'package:guru/logic/tourist/add_tourist_cubit.dart';
 
 showListPaymentDialog(BuildContext ctxt, Size size) {
   showDialog(
@@ -21,7 +20,7 @@ showListPaymentDialog(BuildContext ctxt, Size size) {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  BlocProvider.of<TourGuideCubit>(ctxt).selectedPaymentController.text = _paymentTypes[index];
+                  BlocProvider.of<AddTouristCubit>(ctxt).selectedPaymentController.text = _paymentTypes[index];
                   Navigator.pop(context);
                 },
                 child: Padding(
@@ -53,7 +52,7 @@ showListPaymentDialog(BuildContext ctxt, Size size) {
     },
   );
 }
-final List<String> _paymentTypes = ['Credit Card', 'PayPal', 'Bank Transfer'];
+final List<String> _paymentTypes = [ 'PayPal'];
 /*List<String> productCategories = [
   'category 1',
   'category 2',

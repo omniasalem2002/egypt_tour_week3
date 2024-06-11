@@ -354,7 +354,7 @@ class _LoginViewState extends State<LoginView> {
                                 },
                               ),
                               const SizedBox(height: 20),
-                              CustomTextFormField(
+                             /* CustomTextFormField(
                                 controller: context
                                     .read<TourGuideCubit>()
                                     .selectedPaymentController,
@@ -380,7 +380,7 @@ class _LoginViewState extends State<LoginView> {
                                     return 'Please select a type of payment you want';
                                   }
                                 },
-                              ),
+                              ),*/
                               const SizedBox(height: 20),
                               context.read<TourGuideCubit>().image != null
                                   ? Image.file(

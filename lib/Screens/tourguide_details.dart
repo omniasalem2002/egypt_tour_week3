@@ -80,7 +80,7 @@ class _TourGuideDetailState extends State<TourGuideDetail> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return  FormForTourist(nameTourGuide: widget.tourGuide.name);
+                    return  FormForTourist(tourGuideName: widget.tourGuide.name);
                   },
                 ),
               );
