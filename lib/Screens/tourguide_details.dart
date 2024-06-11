@@ -70,6 +70,30 @@ class _TourGuideDetailState extends State<TourGuideDetail> {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(widget.tourGuide.workExperiences),
           ),
+
+          const SizedBox(
+            height: 40,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return  FormForTourist(nameTourGuide: widget.tourGuide.name);
+                  },
+                ),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 1, 61, 58),
+              // maximumSize: const Size(125, 40),
+            ),
+            child: const Text(
+              "Book Now",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
           const SizedBox(
             height: 20,
           ),
@@ -90,30 +114,8 @@ class _TourGuideDetailState extends State<TourGuideDetail> {
                 color: Color.fromARGB(255, 255, 17, 1),
               );
             },
-            onRatingUpdate: (rating) {},
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const FormForTourist();
-                  },
-                ),
-              );
+            onRatingUpdate: (rating) {
             },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 1, 61, 58),
-              // maximumSize: const Size(125, 40),
-            ),
-            child: const Text(
-              "Book Now",
-              style: TextStyle(color: Colors.white),
-            ),
           ),
         ],
       ),

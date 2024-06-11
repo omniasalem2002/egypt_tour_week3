@@ -489,8 +489,6 @@ class _LoginViewState extends State<LoginView> {
                           ),
                         ),
                       ),
-                    if (_selectedUserType == " Tourist  ")
-                     const FormForTourist()
                   ],
                 )
               ],

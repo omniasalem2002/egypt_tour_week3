@@ -7,7 +7,8 @@ import 'package:lottie/lottie.dart';
 import 'package:guru/data/models/tour_guide/TourGuideModel.dart';
 
 class FormForTourist extends StatefulWidget {
-  const FormForTourist({super.key});
+  String nameTourGuide;
+  FormForTourist({super.key,required this.nameTourGuide});
 
   @override
   State<FormForTourist> createState() => _FormForTouristState();
@@ -39,10 +40,9 @@ class _FormForTouristState extends State<FormForTourist> {
                   color: const Color.fromARGB(255, 1, 61, 58),
                   borderRadius: BorderRadius.circular(5),
                 ),
-                child: const Center(
-                    child: Text(
-                  "Tour Guide Name",
-                  style: TextStyle(
+                child:  Center(
+                    child: Text(widget.nameTourGuide,
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 17,
                   ),

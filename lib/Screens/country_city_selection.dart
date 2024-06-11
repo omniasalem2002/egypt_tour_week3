@@ -20,6 +20,7 @@ class _CountryCitySelectionState extends State<CountryCitySelection> {
   final List<String> _cities = [
     'Cairo',
     'Luxor',
+    'Giza'
     'Aswan',
     'Alexandria',
     'Sharm El Sheikh',
@@ -58,7 +59,7 @@ class _CountryCitySelectionState extends State<CountryCitySelection> {
                   // mainAxisAlignment: MainAxisAlignment.start,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
+                   const SizedBox(
                       height: 50,
                     ),
                     Padding(
@@ -130,7 +131,27 @@ class _CountryCitySelectionState extends State<CountryCitySelection> {
                         textStyle: Styles.font14LightGreyRegular(context),
                         backgroundColor: ColorsApp.darkPrimary,
                         onPressed: () {
-                          if (_selectedCity == null || _selectedCity!.isEmpty) {
+                          if (_selectedCountry == null || _selectedCountry!.isEmpty) {
+                          // Show error dialog if no city is selected
+                          showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                          return AlertDialog(
+                          title: Text('Error'),
+                          content: Text('Please select a country.'),
+                          actions: <Widget>[
+                          TextButton(
+                          child: Text('OK'),
+                          onPressed: () {
+                          Navigator.of(context).pop();
+                          },
+                          ),
+                          ],
+                          );
+                          },
+                          );
+                          }
+                         else if (_selectedCity == null || _selectedCity!.isEmpty) {
                             // Show error dialog if no city is selected
                             showDialog(
                               context: context,
@@ -149,7 +170,8 @@ class _CountryCitySelectionState extends State<CountryCitySelection> {
                                 );
                               },
                             );
-                          } else {
+                          }
+                          else {
                             // Proceed with navigation if a city is selected
                             Navigator.push(
                               context,
